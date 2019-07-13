@@ -9,6 +9,7 @@
 * @  수정일      수정자              수정내용
 * @ ---------   ---------   -------------------------------
 * @ 2019.07.12     한유진      최초생성
+* @ 2019.07.13     한유진      전체수정
 *
 * @author BIT 116기 2조
 * @since 2019. 07.01
@@ -19,14 +20,16 @@
 */
 -->
 <!doctype html>
+<html class="no-js" lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Admin - MovieProject</title>
+<title>srtdash - SEO Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png"
 	href="resources/images/icon/favicon.ico">
-<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="resources/css/themify-icons.css">
 <link rel="stylesheet" href="resources/css/metisMenu.css">
@@ -41,8 +44,9 @@
 <link rel="stylesheet" href="resources/css/default-css.css">
 <link rel="stylesheet" href="resources/css/styles.css">
 <link rel="stylesheet" href="resources/css/responsive.css">
-<!-- yj : add css -->
+<!--yj : add css-->
 <link rel="stylesheet" href="resources/css/modifystyles.css">
+
 <!-- modernizr css -->
 <script src="resources/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -62,8 +66,8 @@
 		<div class="sidebar-menu">
 			<div class="sidebar-header">
 				<div class="logo">
-					<a href="adminIndex.do"><img src="resources/images/icon/logo.png"
-						alt="logo"></a>
+					<span style="color:white;font-weight:bold;font-size:30px;">BlockBuster</span><br>
+					<span style="color:white;font-weight:bold;font-size:20px;">(&nbsp;ADMIN SITE&nbsp;)</span>
 				</div>
 			</div>
 			<div class="main-menu">
@@ -74,20 +78,20 @@
 								aria-expanded="true"> <i class="ti-dashboard"></i><span>회원
 										관리</span></a>
 								<ul class="collapse">
-									<li><a href="manageMemberList.html">전체 회원</a></li>
-									<li><a href="manageBlackList.html">블랙리스트 회원</a></li>
+									<li><a href="manageMemberList.do">전체 회원</a></li>
+									<li><a href="manageBlackList.do">블랙리스트 회원</a></li>
 								</ul></li>
 							<li><a href="javascript:void(0)" aria-expanded="true"> <i
 									class="ti-layout-sidebar-left"></i><span>게시글 관리</span></a>
 								<ul class="collapse">
-									<li><a href="manageMemberPost.html">회원 게시글</a></li>
-									<li><a href="manageSpamPost.html">신고 게시글</a></li>
+									<li><a href="manageMemberPost.do">회원 게시글</a></li>
+									<li><a href="manageSpamPost.do">신고 게시글</a></li>
 								</ul></li>
 							<li><a href="javascript:void(0)" aria-expanded="true"><i
 									class="ti-pie-chart"></i><span>공지 및 QnA 관리</span></a>
 								<ul class="collapse">
-									<li><a href="barchart.html">공지사항</a></li>
-									<li><a href="linechart.html">QnA</a></li>
+									<li><a href="#">공지사항</a></li>
+									<li><a href="#">QnA</a></li>
 								</ul></li>
 						</ul>
 					</nav>
@@ -97,16 +101,13 @@
 		<!-- sidebar menu area end -->
 		<!-- main content area start -->
 		<div class="main-content">
-			<!-- page title area start -->
-			<div class="page-title-area">
+			<!-- header area start -->
+			<div class="header-area">
 				<div class="row align-items-center">
-					<div class="col-sm-6">
-						<div class="breadcrumbs-area clearfix">
-							<h4 class="page-title pull-left">Dashboard</h4>
-							<ul class="breadcrumbs pull-left">
-								<li><a href="index.html">Home</a></li>
-								<li><span>Dashboard</span></li>
-							</ul>
+					<!-- nav button -->
+					<div class="col-md-6 col-sm-8 clearfix">
+						<div class="nav-btn pull-left">
+							<span></span> <span></span> <span></span>
 						</div>
 					</div>
 					<div class="col-sm-6 clearfix">
@@ -114,14 +115,13 @@
 							<img class="avatar user-thumb"
 								src="resources/images/author/avatar.png" alt="avatar">
 							<h4 class="user-name dropdown-toggle" data-toggle="dropdown">
-								관리자명<i class="fa fa-angle-down"></i>
+								관리자 <i class="fa fa-angle-down"></i>
 							</h4>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="#">Settings</a> <a
-									class="dropdown-item" href="#">Log Out</a>
+								<a class="dropdown-item" href="#">Log Out</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- page title area end -->
+			<!-- header area end -->

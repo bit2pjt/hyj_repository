@@ -15,6 +15,25 @@
 *
 *  Copyright (C) by bit 2조 All right reserved.
 */
+
+.card2 {
+	width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.card2:hover {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.02);
+}
+
+.card-body2 {
+	width: 100%;
+    padding: 25.6px;
+    padding: 1.6rem;
+}
 /*
 yj : start | manageMemberInfo
 */
@@ -114,8 +133,6 @@ yj : start | manageMemberPost, manageSpamPost
 }
 .post-search-box{
     width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 .post-search-box form {
     position: relative;
@@ -150,6 +167,10 @@ yj : start | manageMemberPost, manageSpamPost
     top: 14px;
     font-size: 14px;
     color: #b1a7a7;
+}
+
+.single-table .table{
+	margin-bottom: 50px;
 }
 
 /*

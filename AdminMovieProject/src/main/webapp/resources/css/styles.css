@@ -396,7 +396,8 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    padding: 15px 30px;
+    padding-left: 15px;
+    padding-right: 30px;
     background: #fff;
     border-bottom: 1px solid #d8e3e7;
 }
@@ -656,7 +657,7 @@
     left: 0;
     top: 50%;
     width: 4px;
-    height: 36px;
+    height: 30px;
     background: var(--primary-color);
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
