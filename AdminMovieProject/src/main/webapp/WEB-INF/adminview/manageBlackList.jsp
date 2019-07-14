@@ -47,9 +47,8 @@
 							<button class="btn btn-rounded btn-light-purple dropdown-toggle"
 								type="button" data-toggle="dropdown">검색조건</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									class="dropdown-item" href="#">이메일</a> <a class="dropdown-item"
-									href="#">닉네임</a><a class="dropdown-item"
-									href="#">등록일</a>
+								class="dropdown-item" href="#">이메일</a> <a class="dropdown-item"
+									href="#">닉네임</a><a class="dropdown-item" href="#">등록일</a>
 							</div>
 						</div>
 						<form action="#">
@@ -80,7 +79,7 @@
 										<td>유우진</td>
 										<td>2019/07/13</td>
 										<td><i class="ti-search"
-											onclick="location.href='manageMemberInfo.'"></i></td>
+											onclick="location.href='manageMemberInfo.do'"></i></td>
 									</tr>
 									<%
 										}
@@ -101,6 +100,19 @@
 							<li class="page-item"><a class="page-link" href="#">Next</a>
 							</li>
 						</ul>
+						<!-- <ul class="pagination">
+							<li class="page-item"><a class="page-link" href="#"
+								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+							</a></li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#"
+								aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
+									class="sr-only">Next</span>
+							</a></li>
+						</ul> -->
 					</nav>
 					<!-- yj : end | pagination -->
 				</div>

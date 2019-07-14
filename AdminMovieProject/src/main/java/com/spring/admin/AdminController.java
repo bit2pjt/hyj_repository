@@ -23,9 +23,25 @@ public class AdminController {
 	public String manageMemberInfo() {
 		return "manageMemberInfo";
 	}
+	@RequestMapping(value="/manageMemberModify.do", method=RequestMethod.GET)
+	public String manageMemberModify() {
+		return "manageMemberModify";
+	}
 	@RequestMapping(value="/manageMemberPost.do", method=RequestMethod.GET)
 	public String manageMemberPost() {
 		return "manageMemberPost";
+	}
+	@RequestMapping(value="/managePostGet.do", method=RequestMethod.GET)
+	public String managePostGet() {
+		return "managePostGet";
+	}
+	@RequestMapping(value="/manageReviewGet.do", method=RequestMethod.GET)
+	public String manageReviewGet() {
+		return "manageReviewGet";
+	}
+	@RequestMapping(value="/manageMmlGet.do", method=RequestMethod.GET)
+	public String manageMmlGet() {
+		return "manageMmlGet";
 	}
 	@RequestMapping(value="/manageSpamPost.do", method=RequestMethod.GET)
 	public String manageSpamPost() {

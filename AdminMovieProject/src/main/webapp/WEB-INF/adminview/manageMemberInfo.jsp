@@ -24,10 +24,11 @@
 	<div class="row align-items-center">
 		<div class="col-sm-6">
 			<div class="breadcrumbs-area clearfix">
-				<h4 class="page-title pull-left">블랙리스트 회원</h4>
+				<h4 class="page-title pull-left">회원정보 상세보기</h4>
 				<ul class="breadcrumbs pull-left">
 					<li><a href="/admin/">Home</a></li>
-					<li><span>블랙리스트 회원</span></li>
+					<li><a href="/admin/manageMemberList.do">전체 회원</a></li><!-- 이전페이지가 블랙리스트회원일경우 전체회원이 아닌 블랙리스트회원으로! 안되면 그냥 없애버려유 -->
+					<li><span>회원정보 상세보기</span></li>
 				</ul>
 			</div>
 		</div>
@@ -39,70 +40,91 @@
 		<!-- yj : start | memberList-->
 		<!-- Striped table start -->
 		<div class="col-lg-12 mt-5">
-			<div class="card2">
-				<div class="card-body2">
-					<!-- post-search-box start -->
-					<div class="post-search-box drop-buttons row">
-						<div class="dropdown col-md-2 col-sm-6">
-							<button class="btn btn-rounded btn-light-purple dropdown-toggle"
-								type="button" data-toggle="dropdown">검색조건</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									class="dropdown-item" href="#">이메일</a> <a class="dropdown-item"
-									href="#">닉네임</a><a class="dropdown-item"
-									href="#">등록일</a>
-							</div>
-						</div>
-						<form action="#">
-							<input class="post-search-box" type="text" name="search"
-								placeholder="Search..." required> <i class="ti-search"></i>
-						</form>
+			<div class="card">
+				<div class="card-memberinfo">
+					<!--화면 3분할-->
+					<div class="info-left">
+						<img src="resources/images/person.png" width="150px" height="150px">
 					</div>
-					<!-- post-search-box end -->
-					<div class="single-table">
-						<div class="table-responsive">
-							<table class="table table-striped text-center">
-								<thead class="text-uppercase">
-									<tr>
-										<th scope="col" width="120px">블랙리스트 번호</th>
-										<th scope="col">이메일</th>
-										<th scope="col">닉네임</th>
-										<th scope="col">블랙리스트 등록일</th>
-										<th scope="col">보기</th>
-									</tr>
-								</thead>
-								<tbody>
-									<%
-										for (int i = 0; i < 10; i++) {
-									%>
-									<tr>
-										<th scope="row"><%= i+1 %></th>
-										<td>bit0hyjbit0hyj@gmail.com</td>
-										<td>유우진</td>
-										<td>2019/07/13</td>
-										<td><i class="ti-search"
-											onclick="location.href='manageMemberInfo.'"></i></td>
-									</tr>
-									<%
-										}
-									%>
-								</tbody>
-							</table>
-						</div>
+					<div class="info-mid">
+						<table class="info-mid-table">
+							<tr>
+								<td>회원번호&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>회원번호</span></td>
+							</tr>
+							<tr>
+								<td>이름&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>이름</span></td>
+							</tr>
+							<tr>
+								<td>닉네임&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>닉네임</span></td>
+							</tr>
+							<tr>
+								<td>이메일&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>이메일</span></td>
+							</tr>
+							<tr>
+								<td>이메일 인증여부&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>이메일 인증여부</span></td>
+							</tr>
+							<tr>
+								<td>이메일 수신동의&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>이메일 수신동의</span></td>
+							</tr>
+							<tr>
+								<td>전화번호&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>전화번호</span></td>
+							</tr>
+							<tr>
+								<td>SMS 수신동의&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>SMS 수신동의</span></td>
+							</tr>
+							<tr>
+								<td>회원가입일&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>회원가입일</span></td>
+							</tr>
+							<tr>
+								<td>회원정보수정일&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>회원정보수정일</span></td>
+							</tr>
+							<tr>
+								<td>탈퇴여부&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>탈퇴여부</span></td>
+							</tr>
+							<tr>
+								<td>팔로잉수&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>팔로잉수</span></td>
+							</tr>
+							<tr>
+								<td>팔로워수&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>팔로워수</span></td>
+							</tr>
+							<tr>
+								<td>엠블럼 등급&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>엠블럼 등급</span></td>
+							</tr>
+							<tr>
+								<td>선호장르&ensp;&ensp;:&ensp;&ensp;</td>
+								<td><span>선호장르</span></td>
+							</tr>
+						</table>
 					</div>
-					<!-- yj : start | pagination-->
-					<nav aria-label="...">
-						<ul class="pagination justify-content-center">
-							<li class="page-item disabled"><a class="page-link" href="#"
-								tabindex="-1">Previous</a></li>
-							<li class="page-item active"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2 <span
-									class="sr-only">(current)</span></a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">Next</a>
-							</li>
-						</ul>
-					</nav>
-					<!-- yj : end | pagination -->
+					<div class="info-right">
+						<button type="button" class="btn btn-dark mb-3"
+							onclick="location.href='manageMemberModify.do'">회원정보
+							수정</button>
+						<br>
+						<button type="button" class="btn btn-dark mb-3"
+							onclick="location.href='manageMemberPost.do'">게시글 관리</button>
+						<br>
+						<button type="button" class="btn btn-dark mb-3">블랙리스트 등록</button>
+						<br>
+						<button type="button" class="btn btn-dark mb-3">회원탈퇴</button>
+						<br>
+						<button type="button" class="btn btn-dark mb-3 btn-memberlist"
+							onclick="location.href='manageMemberList.do'">회원목록</button>
+					</div>
 				</div>
 			</div>
 		</div>

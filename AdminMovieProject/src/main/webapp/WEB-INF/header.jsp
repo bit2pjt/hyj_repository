@@ -90,8 +90,8 @@
 							<li><a href="javascript:void(0)" aria-expanded="true"><i
 									class="ti-pie-chart"></i><span>공지 및 QnA 관리</span></a>
 								<ul class="collapse">
-									<li><a href="#">공지사항</a></li>
-									<li><a href="#">QnA</a></li>
+									<li><a href="adminNoticeList.do">공지사항</a></li>
+									<li><a href="adminQnaList.do">QnA</a></li>
 								</ul></li>
 						</ul>
 					</nav>
