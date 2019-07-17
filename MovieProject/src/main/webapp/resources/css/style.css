@@ -5629,9 +5629,7 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 20px;
- 
 }
-
 .hero ul.breadcumb {
   list-style-type: none;
 }
@@ -5673,7 +5671,7 @@ ul {
   height: 538px;
 }
 .common-hero {
-  height: 385px;
+  height: 250px;
   background: url('../images/uploads/user-hero-bg.jpg') no-repeat;
 }
 .common-hero:before {
@@ -5776,7 +5774,6 @@ ul {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-
 .redbtn i {
   margin-right: 10px;
 }
@@ -5799,7 +5796,7 @@ ul {
 .user-information {
   border: 3px solid #0f2133;
   margin-right: 30px;
-  margin-top: 0px;
+  margin-top: -200px;
   background-color: #020d18;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -5818,14 +5815,9 @@ ul {
 }
 .user-information .user-img {
   text-align: center;
+  margin-bottom: 30px;
   padding: 30px 0 20px 0;
 }
-
-.user-img {
-  margin-left:30%;
-  display:inline-block;
-}
-
 .user-information .user-img img {
   margin-bottom: 30px;
 }
@@ -5834,14 +5826,6 @@ ul {
 }
 .user-information ul li {
   margin-bottom: 15px;
-}
-/** 수정 **/
-.user-information.info ul li{
-  font-family: 'Dosis', sans-serif;
-  font-size: 14px;
-  color: #ffffff;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 .user-information ul li a {
   font-family: 'Dosis', sans-serif;
@@ -5857,6 +5841,7 @@ ul {
   color: #dcf836;
 }
 .user-information .user-fav {
+  border-top: 1px solid #0f2133;
   padding: 25px 0;
 }
 .user-information .user-fav p {
@@ -6527,10 +6512,11 @@ ul {
   padding: 30px;
 }
 .user-pro h4 {
+  font-family: 'Dosis', sans-serif;
   font-size: 14px;
-  color: black;
+  color: #ffffff;
   font-weight: bold;
-  /**text-transform: uppercase;**/
+  text-transform: uppercase;
   margin-bottom: 30px;
 }
 .user-pro input.submit {
