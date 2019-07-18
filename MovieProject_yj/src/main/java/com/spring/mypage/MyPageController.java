@@ -18,6 +18,8 @@ package com.spring.mypage;
  */
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -59,22 +61,21 @@ public class MyPageController {
 	
 	//마이페이지 - 1:1 문의내역 리스트
 	@RequestMapping(value="/one_list.do", method=RequestMethod.GET)
-	public String oneList(HttpServletRequest request) {
-		
-		HttpSession session = request.getSession();
-		
+	public String oneList(HttpServletRequest request, HttpSession session) {
+	
 		//왼쪽 메뉴 상단의 사용자 정보가져오기 위해 session에 강제로 email정보 저장
-		session.setAttribute("email", "bit0hyj@gmail.com");
+		session.setAttribute("m_email", "bit0hyj@gmail.com");
 		
 		//사용자 정보
-		String m_email = (String)session.getAttribute("email");
+		String m_email = (String)session.getAttribute("m_email");
 		String m_name = myPageService.getMemberName(m_email);	//System.out.println("=============MyPageController.java=====================  m_name : " + m_name);
 		request.setAttribute("m_name", m_name);
-		request.setAttribute("m_email", m_email);
 		
 		//1:1 문의내역
-		
-		
+		List<OneVO> qnaList = null;
+		int id = myPageService.getMemberId(m_email);	//System.out.println("=============MyPageController.java=====================  id : " + id);
+		qnaList = myPageService.getQnaList(id);
+		request.setAttribute("qnaList", qnaList);
 		return "mypage/one_list";
 	}
 	

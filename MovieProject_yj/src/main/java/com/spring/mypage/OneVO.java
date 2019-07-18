@@ -19,6 +19,7 @@ package com.spring.mypage;
 import java.sql.Date;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 public class OneVO {
@@ -31,4 +32,8 @@ public class OneVO {
 	private Date qna_date;	//1:1 문의 작성날짜
 	private Date qna_update_date;	//1:1 문의 수정날짜
 	private String qna_answer;	//1:1 문의 답변여부
+	
+	public String toString() {
+		return "[" + qna_no + ", " + id + ", " + qna_category + ", " + qna_title + ", " + qna_content + ", " + qna_date + ", " + qna_update_date + ", " + qna_answer+ "]\n"; 
+	}
 }

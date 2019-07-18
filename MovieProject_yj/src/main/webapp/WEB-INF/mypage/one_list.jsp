@@ -22,8 +22,8 @@
 	//
 	
 	//MyPageController.java의 oneList에서 넘어온 값(회원이름, 회원 이메일));
-	String m_name = (String)request.getAttribute("m_name");
-	String m_email = (String)request.getAttribute("m_email");
+	//String m_name = (String)request.getAttribute("m_name");
+	//String m_email = (String)request.getAttribute("m_email");
 %>
 <%@ include file="../header.jsp"%>
 <!DOCTYPE html>
@@ -54,10 +54,10 @@
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="info">
 						<h2>
-							<strong><%=m_name %> 님</strong>
+							<strong>${requestScope.m_name } 님</strong>
 						</h2>
 						<h3>
-							<strong><%=m_email %></strong>
+							<strong>${sessionScope.m_email }</strong>
 						</h3>
 					</div>
 					<div class="user-information-hjs">
@@ -117,10 +117,31 @@
 									</thead>
 									<!-- core jstl의 foreach로 게시글의 목록이 올 자리다 -->
 									<tbody>
+									<c:choose>
+										<c:when test="${requestScope.qnaList[0].qna_no == null}">
+											<tr>
+												<td colspan="4">등록된 문의글이 없습니다.</td>
+											</tr>
+										</c:when>
+										<c:otherwise>
+											<c:forEach var="qna" items="${requestScope.qnaList }">
+												<tr>
+													<td>${qna.qna_category }</td>
+													<td><a href="one_get.do?qna_no=${qna.qna_no}">${qna.qna_title}</a></td>
+													<td>${qna.qna_date}</td>
+													<td>${qna.qna_answer}</td>
+												</tr>
+											</c:forEach>
+										</c:otherwise>
+									</c:choose>
+									</tbody>
+									
+									<%-- 
+									<tbody>
 									<%
 										for(int i=0; i<10; i++){
 									%>
-										<tr >
+										<tr>
 											<td>결말해석</td>
 											<td><a href="one_get.do">고질라 쿠키영상 무슨뜻인가요?</a></td>
 											<td>2011/04/25</td>
@@ -129,7 +150,8 @@
 									<%
 										}
 									%>
-									</tbody>
+									</tbody> --%>
+									
 								</table>
 
 								<ul class="pagination">
