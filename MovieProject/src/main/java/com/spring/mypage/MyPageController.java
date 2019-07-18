@@ -1,32 +1,34 @@
 package com.spring.mypage;
-
 /**
-* @Class Name : LoginController.java
-* @Description : Login Controller
-* @Modification Information
-* @
-* @  수정일     	  수정자                 수정내용
-* @ ---------   ---------   -------------------------------
-* @ 2019.07.0?     황진석      최초생성
-* @ 2019.07.17     한유진      순서변경, 주석추가
-* @author bit 2조
-* @since 2019. 07.01
-* @version 1.0
-* @see
-*
-*  Copyright (C) by Bit All right reserved.
-*/
+ * @Class Name : MyPageController.java
+ * @Description : MyPage Controller
+ * @Modification Information
+ * @
+ * @  수정일     	  수정자                 수정내용
+ * @ ---------   ---------   -------------------------------
+ * @ 2019.07.0?     황진석      최초생성
+ * @ 2019.07.17     한유진      순서변경, 각 메서드 별 주석추가(기능설명)
+ * @ 2019.07.17     한유진      클래스명 변경(LoginController -> MyPageController), 기능구현
+ * @author bit 2조
+ * @since 2019. 07.01
+ * @version 1.0
+ * @see
+ *
+ *  Copyright (C) by Bit All right reserved.
+ */
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class LoginController {
-
+public class MyPageController {
+	
 	//마이페이지 첫화면
 	@RequestMapping(value="/mypage.do", method=RequestMethod.GET)
 	public String mypage() {
+		
 		return "mypage/mypage";
 	}
 	

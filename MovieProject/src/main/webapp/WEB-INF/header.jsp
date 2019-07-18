@@ -48,7 +48,8 @@
     <!-- CSS files -->
    	<link rel="stylesheet" href="<c:url value="/resources/css/plugins.css" />">
 	<link rel="stylesheet" href="<c:url value="/resources/css/header_style.css" />">
-	<link rel="stylesheet" href="<c:url value="/resources/css/sp_style.css" />">
+	<!-- 상필오빠 css로 인해 1:1문의 card속성이 변해서 해당 css파일 주석처리함 -->
+	<!-- <link rel="stylesheet" href="<c:url value="/resources/css/sp_style.css" />"> --!>
 	
 	<link rel="stylesheet" href="<c:url value="/resources/css/hm_css.css" />">
 		<link rel="stylesheet" href="<c:url value="/resources/css/modifystyle.css"/>">

@@ -9,6 +9,7 @@
 * @  수정일     		     수정자            		수정내용
 * @ ---------   ---------   -------------------------------
 * @ 2019.07.06         황진석      		 	최초생성
+* @ 2019.07.06         황진석      		 	최초생성
 * @author bit 2조
 * @since 2019. 07.01
 * @version 1.0
@@ -110,9 +111,7 @@
 								<li class="tb_line">
 									<div class="tb_th1"> 내용 </div>
 									<div class="tb_td1">
-										<textarea  cols="70" rows="5" style="resize: none;height: 200px" >
-											내용입니다.
-										</textarea>
+										<textarea  cols="70" rows="5" style="resize: none;height: 200px" >내용입니다.</textarea>
 									</div>
 								</li>
 							</ul>

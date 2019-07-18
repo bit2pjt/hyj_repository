@@ -6,9 +6,10 @@
 * @Description : 1:1문의 상세
 * @Modification Information
 * @
-* @  수정일     		     수정자            		수정내용
+* @  수정일     	  수정자            		수정내용
 * @ ---------   ---------   -------------------------------
-* @ 2019.07.06         황진석      		 	최초생성
+* @ 2019.07.06    황진석      		 	최초생성
+* @ 2019.07.18    한유진       		    하단의 <input>취소 -> <button>목록으로 변경 및 back-end 작업
 * @author bit 2조
 * @since 2019. 07.01
 * @version 1.0
@@ -75,7 +76,7 @@
 					</div>
 						
 					<div>
-						<form action="one_update" method="get">
+						<form action="one_update.do" method="get">
 							<ul>
 								<li class="tb_line">
 									<div class="tb_th1"> 상담구분 </div>
@@ -122,7 +123,7 @@
 							<br>
 							<div class="btn_m">
 								<input type="submit" class="btn-check" value="수정"> &nbsp;
-								<input type="reset" class="btn-check" value="취소">
+								<button type="button" class="btn-check" onclick="location.href='one_list.do'">목록</button>
 							</div>
 						</form>
 						</div>

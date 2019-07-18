@@ -22,6 +22,9 @@
 */
 -->
 <%@ include file="../header.jsp"%>
+<head>
+<link rel="stylesheet" href="<c:url value="/resources/css/yj_style.css" />">
+</head>
 <div class="buster-light">
 	<div class="hero mv-single-hero">
 		<div class="container">
