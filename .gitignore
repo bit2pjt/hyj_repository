@@ -1,0 +1,7 @@
+/.metadata/
+.DS_Store
+Servers/
+*.class
+*.MF
+MovieProject/target/classes/com/spring/other/eventController.class
+*.class
