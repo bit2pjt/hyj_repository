@@ -54,7 +54,7 @@
 	<link rel="stylesheet" href="<c:url value="/resources/css/hm_css.css" />">
 		<link rel="stylesheet" href="<c:url value="/resources/css/modifystyle.css"/>">
 	<!-- yj : css 추가 -->
-	<link rel="stylesheet" href="<c:url value="resources/css/modifyplugins.css" />">
+	<link rel="stylesheet" href="<c:url value="/resources/css/modifyplugins.css" />">
 
 </head>
 
@@ -63,6 +63,7 @@
 
     <!--preloading-->
     <div id="preloader">
+        <!-- <img class="logo" src="resources/images/logo1.png" alt="" width="119" height="58"> -->
         <img class="logo" src="resources/images/logo1.png" alt="" width="119" height="58">
         <div id="status">
             <span></span>

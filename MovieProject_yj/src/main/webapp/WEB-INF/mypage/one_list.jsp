@@ -18,6 +18,13 @@
 *  Copyright (C) by Bit All right reserved.
 */
 -->
+<%
+	//
+	
+	//MyPageController.java의 oneList에서 넘어온 값(회원이름, 회원 이메일));
+	String m_name = (String)request.getAttribute("m_name");
+	String m_email = (String)request.getAttribute("m_email");
+%>
 <%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -47,10 +54,10 @@
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="info">
 						<h2>
-							<strong>황진석 님</strong>
+							<strong><%=m_name %> 님</strong>
 						</h2>
 						<h3>
-							<strong>h10046245h@naver.com</strong>
+							<strong><%=m_email %></strong>
 						</h3>
 					</div>
 					<div class="user-information-hjs">

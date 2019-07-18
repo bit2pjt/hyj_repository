@@ -23,5 +23,14 @@ import org.springframework.stereotype.Service;
 @Service("myPageService")
 public class MyPageServiceImpl implements MyPageService{
 
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@Override
+	public String getMemberName(String m_email) {
+		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
+		String m_name = mypageDAO.getMemberName(m_email);
+		return m_name;
+	}
 	
 }

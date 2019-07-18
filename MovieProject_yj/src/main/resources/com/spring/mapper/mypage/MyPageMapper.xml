@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 30.//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mypage.MyPageDAO">
+
+	<select id="getMemberName" parameterType="String" resultType="String">
+	 	select M_NAME from member where M_EMAIL=#{m_email}
+	 </select>
+	 
+</mapper>	
