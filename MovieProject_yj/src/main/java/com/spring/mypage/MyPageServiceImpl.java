@@ -51,4 +51,19 @@ public class MyPageServiceImpl implements MyPageService{
 		return qnaList;
 	}
 	
+	@Override
+	public int insertQna(OneVO oneVO) {
+		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
+		int result = mypageDAO.insertQna(oneVO);
+		return result;
+	}
+	
+	@Override
+	public String getMemberNickname(String m_email) {
+		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
+		String m_nickname = mypageDAO.getMemberNickname(m_email);
+		return m_nickname;
+	}
+	
+	
 }

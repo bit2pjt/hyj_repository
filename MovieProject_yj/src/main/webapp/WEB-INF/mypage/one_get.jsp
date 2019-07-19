@@ -72,7 +72,7 @@
 				<div>
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<div class="info_update">
-						<h1><strong>1:1 문의쓰기</strong></h1>
+						<h1><strong>1:1 문의 상세보기</strong></h1>
 					</div>
 						
 					<div>
@@ -122,7 +122,7 @@
 							</ul>
 							<br>
 							<div class="btn_m">
-								<input type="submit" class="btn-check" value="수정"> &nbsp;
+								<input type="submit" class="btn-check" value="수정" onclick="location.href='one_update.do'"> &nbsp;
 								<button type="button" class="btn-check" onclick="location.href='one_list.do'">목록</button>
 							</div>
 						</form>

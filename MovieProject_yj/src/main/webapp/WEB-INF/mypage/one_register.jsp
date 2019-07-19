@@ -10,7 +10,7 @@
 * @  수정일     	  수정자            		수정내용
 * @ ---------   ---------   -------------------------------
 * @ 2019.07.06    황진석      		 	최초생성
-* @ 2019.07.18    한유진       		    버튼 동작 수정 및 back-end 작업
+* @ 2019.07.19    한유진       		    버튼 동작 수정 및 back-end 작업, check() 기능 추가( 미입력시 알림창)
 * @author bit 2조
 * @since 2019. 07.01
 * @version 1.0
@@ -24,6 +24,37 @@
 <html>
 <head>
 <link rel="stylesheet" href="<c:url value="/resources/css/hjs.css" />">
+<script>
+function check(){
+	//제목과 내용의 앞뒤 공백 제거
+	var qna_title=qnaform.qna_title.value.trim();
+	var qna_content=qnaform.qna_content.value.trim();
+	
+	if(qna_title.length == 0){
+		alert("제목을 입력해주세요.");
+		qnaform.qna_title.focus();
+		return false;
+	}
+	if(qna_content.length == 0){
+		alert("내용을 입력하세요.");
+		qnaform.qna_content.focus();
+		return false;
+	}
+	
+	//공백 제거 후 양식에 맞게 값이 입력되어있을 경우 폼의 데이터를 변경 -> 자바코드에서 공백제거해줄랭
+	//document.getElementById("qna_title").value=qna_title;
+	//document.getElementById("qna_content").value=qna_content;
+	
+	return true;
+}
+function register_back(){
+	msg="1:1 문의글 작성을 취소하시겠습니까?";
+	if(confirm(msg)!=0){
+		location.href="one_list.do";
+	}
+	
+}
+</script>
 </head>
 
 <div class="hero user-hero">
@@ -48,10 +79,10 @@
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="info">
 						<h2>
-							<strong>황진석 님</strong>
+							<strong>${requestScope.m_name } 님</strong>
 						</h2>
 						<h3>
-							<strong>h10046245h@naver.com</strong>
+							<strong>${sessionScope.m_email }</strong>
 						</h3>
 					</div>
 					<div class="user-information-hjs">
@@ -84,7 +115,7 @@
 						</div>
 
 						<div>
-							<form action="one_list.do" method="post">
+							<form name="qnaform" action="one_registerAction.do" method="post" onsubmit="return check()">
 								<table class="onetable_hjs">
 									<colgroup>
 										<col width="5%" />
@@ -95,22 +126,22 @@
 											<td class="vertical_top">상담구분</td>
 											<td>
 												<div>
-													<label for=""> <label class="fancy-radio custom-color-coral"> <input
-															name="one" type="radio" checked><span><i></i><b>영화
-																	문의</b></span>
-													</label> <label class="fancy-radio custom-color-coral"> <input
-															name="one" type="radio"><span><i></i><b>예매
-																	문의</b> </span>
-													</label> <label class="fancy-radio custom-color-coral"> <input
-															name="one" type="radio"><span><i></i><b>이벤트
-																	문의</b></span>
-													</label> <label class="fancy-radio custom-color-coral"> <input
-															name="one" type="radio"><span><i></i><b>회원정보
-																	문의</b></span>
-													</label> <label class="fancy-radio custom-color-coral"> <input
-															name="one" type="radio"><span><i></i><b>기타
-																	문의</b></span>
-													</label>
+													<label for=""> 
+														<label class="fancy-radio custom-color-coral"> 
+															<input name="qna_category" type="radio" checked value="영화 문의"><span><i></i><b>영화 문의</b></span>
+														</label> 
+														<label class="fancy-radio custom-color-coral"> 
+															<input name="qna_category" type="radio" value="예매 문의"><span><i></i><b>예매 문의</b> </span>
+														</label> 
+														<label class="fancy-radio custom-color-coral"> 
+															<input name="qna_category" type="radio" value="이벤트 문의"><span><i></i><b>이벤트 문의</b></span>
+														</label> 
+														<label class="fancy-radio custom-color-coral"> 
+															<input name="qna_category" type="radio" value="회원정보 문의"><span><i></i><b>회원정보 문의</b></span>
+														</label> 
+														<label class="fancy-radio custom-color-coral"> 
+															<input name="qna_category" type="radio" value="기타 문의"><span><i></i><b>기타 문의</b></span>
+														</label>
 													</label>
 												</div>
 											</td>
@@ -118,14 +149,14 @@
 										<tr>
 											<td>닉네임</td>
 											<td>
-												<div>비트코인</div>
+												<div>${requestScope.m_nickname }</div>
 											</td>
 										</tr>
 										<tr>
 											<td>제목</td>
 											<td>
 												<div>
-													<input type="text" size="50" placeholder="제목을 입력하세요." />
+													<input type="text" maxlength="25" placeholder="제목을 입력하세요.(25자까지 입력가능)" id="qna_title" name="qna_title"/>
 												</div>
 											</td>
 										</tr>
@@ -135,8 +166,7 @@
 											<td>
 												<div>
 													<textarea cols="1" rows="1"
-														style="resize: none; height: 200px"></textarea>
-
+														style="resize: none; height: 200px" id="qna_content" name="qna_content"></textarea>
 												</div>
 											</td>
 										</tr>
@@ -144,7 +174,7 @@
 								</table>
 								<div class="btn_m">
 									<input type="submit" class="btn-check-hjs" value="등록">
-									&nbsp; <input type="reset" class="btn-check-hjs" value="취소">
+									&nbsp;<input type="button" class="btn-check-hjs" value="취소" onclick="register_back()">
 								</div>
 							</form>
 						</div>
