@@ -25,8 +25,10 @@ public interface MyPageService {
 	public String getMemberNickname(String m_email);	//멤버 닉네임 가져오기
 	
 	//1:1 문의내역 리스트 가져오기
-	public List<OneVO> getQnaList(int id);
+	public List<OneVO> getQnaList(int id);	//1:1문의 리스트 가져오기
 	
 	//1:1 문의 등록하기, 가져오기, 수정하기, 삭제하기
-	public int insertQna(OneVO oneVO);
+	public int insertQna(OneVO oneVO);	//1:1 문의 등록
+	public OneVO getQnaDetail(int qna_no);	//1:1 문의 상세정보 가져오기
+	public int updateQna(OneVO oneVO);	//1:1 문의 상세정보 수정하기
 }

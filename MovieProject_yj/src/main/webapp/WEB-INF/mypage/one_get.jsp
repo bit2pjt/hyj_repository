@@ -18,6 +18,9 @@
 *  Copyright (C) by Bit All right reserved.
 */
 -->
+<%
+	int qna_no = Integer.parseInt(request.getParameter("qna_no"));
+%>
 <%@ include file="../header.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -76,7 +79,7 @@
 					</div>
 						
 					<div>
-						<form action="one_update.do" method="get">
+						<%-- <form action="one_update.do?qna_no=<%=qna_no %>" method="get"> --%>
 							<ul>
 								<li class="tb_line">
 									<div class="tb_th1"> 상담구분 </div>
@@ -122,10 +125,11 @@
 							</ul>
 							<br>
 							<div class="btn_m">
-								<input type="submit" class="btn-check" value="수정" onclick="location.href='one_update.do'"> &nbsp;
+								<!-- <input type="submit" class="btn-check" value="수정"> &nbsp; -->
+								<button type="button" class="btn-check" onclick="location.href='one_update.do?qna_no=<%=qna_no%>'">수정</button>
 								<button type="button" class="btn-check" onclick="location.href='one_list.do'">목록</button>
 							</div>
-						</form>
+						<!-- </form> -->
 						</div>
 					</div>
 				</div>

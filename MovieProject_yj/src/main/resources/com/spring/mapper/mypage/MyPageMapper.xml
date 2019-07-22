@@ -21,7 +21,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mypage.MyPageDAO">
 
-	<resultMap type="com.spring.mypage.OneVO" id="merberQnaMap">
+	<resultMap type="com.spring.mypage.OneVO" id="mypageQnaMap">
 		<result property="qna_no" column="qna_no"/>
 		<result property="id" column="id"/>
 		<result property="qna_category" column="qna_category"/>
@@ -44,7 +44,7 @@
 		select ID from member where M_EMAIL=#{m_email, jdbcType=VARCHAR}
 	</select>
 	
-	<select id="getQnaList" parameterType="int" resultMap="merberQnaMap">
+	<select id="getQnaList" parameterType="int" resultMap="mypageQnaMap">
 		select * from board_qna where ID=#{id} order by QNA_NO desc
 	</select>
 	
@@ -60,5 +60,14 @@
 		insert into board_qna values (board_qna_no_seq.nextval, #{id}, #{qna_category, jdbcType=VARCHAR}, #{qna_title, jdbcType=VARCHAR}
 		, #{qna_content, jdbcType=VARCHAR}, sysdate, sysdate, 'N')
 	</insert>
+	
+	<select id="getQnaDetail" parameterType="int" resultMap="mypageQnaMap">
+		select * from board_qna where QNA_NO=#{qna_no}
+	</select>
+	
+	<update id="updateQna" parameterType="com.spring.mypage.OneVO">
+		UPDATE board_qna SET QNA_CATEGORY=#{qna_category, jdbcType=VARCHAR}, QNA_TITLE=#{qna_title, jdbcType=VARCHAR}, QNA_CONTENT=#{qna_content, jdbcType=VARCHAR}, QNA_UPDATE_DATE=sysdate WHERE QNA_NO=#{qna_no}
+	</update>
+	
 	
 </mapper>	

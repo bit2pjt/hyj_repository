@@ -33,6 +33,7 @@ public class MyPageServiceImpl implements MyPageService{
 	public String getMemberName(String m_email) {
 		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
 		String m_name = mypageDAO.getMemberName(m_email);
+		
 		return m_name;
 	}
 	
@@ -40,6 +41,7 @@ public class MyPageServiceImpl implements MyPageService{
 	public int getMemberId(String m_email) {
 		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
 		int id = mypageDAO.getMemberId(m_email);
+		
 		return id;
 	}
 	
@@ -55,6 +57,7 @@ public class MyPageServiceImpl implements MyPageService{
 	public int insertQna(OneVO oneVO) {
 		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
 		int result = mypageDAO.insertQna(oneVO);
+		
 		return result;
 	}
 	
@@ -62,8 +65,24 @@ public class MyPageServiceImpl implements MyPageService{
 	public String getMemberNickname(String m_email) {
 		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
 		String m_nickname = mypageDAO.getMemberNickname(m_email);
+		
 		return m_nickname;
 	}
 	
+	@Override
+	public OneVO getQnaDetail(int qna_no) {
+		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
+		OneVO oneVO = mypageDAO.getQnaDetail(qna_no);
+		
+		return oneVO;
+	}
 	
+	@Override
+	public int updateQna(OneVO oneVO) {
+		MyPageDAO mypageDAO = sqlSession.getMapper(MyPageDAO.class);
+		int result = mypageDAO.updateQna(oneVO);
+		
+		return result;
+	}
+
 }
